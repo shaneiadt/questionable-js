@@ -25,7 +25,7 @@ export class App extends Component {
     const question = { ...this.state.questions[this.state.currentQuestion] };
 
     return (
-      <div>
+      <div style={{ display: 'flex' }}>
         <Question index={this.state.currentQuestion} totalNumberOfQuestions={this.state.questions.length} {...question} setQuestion={this.setQuestion} />
       </div>
     );
