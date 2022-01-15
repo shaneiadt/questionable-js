@@ -61,19 +61,26 @@ export const Question = ({ title, code, options, detail, index, totalNumberOfQue
     return (
         <>
             <div className="question">
-                <div className="scoreContainer">
-                    <span className="score">Score: {score}/{index + 1}</span>
-                    <span className="score">Number of Question: {totalNumberOfQuestions}</span>
-                </div>
+                {index < totalNumberOfQuestions && (
+                    <div className="scoreContainer">
+                        <span className="score">Score: {score}/{index + 1}</span>
+                        <span className="score">Number of Question: {totalNumberOfQuestions}</span>
+                    </div>
+                )}
                 <div className="card">
-                    <h3>{title}</h3>
-                    <div dangerouslySetInnerHTML={{ __html: code }} />
-                    <div dangerouslySetInnerHTML={{ __html: options }} />
-                    <br />
-                    {!show && userAnswer && <button onClick={() => setShow(true)}>Show Answer</button>}
-                    {show && <div dangerouslySetInnerHTML={{ __html: detail }} />}
+                    {index === totalNumberOfQuestions && <p>OVER</p>}
+                    {index < totalNumberOfQuestions && (
+                        <>
+                            <h3>{title}</h3>
+                            <div dangerouslySetInnerHTML={{ __html: code }} />
+                            <div dangerouslySetInnerHTML={{ __html: options }} />
+                            <br />
+                            {!show && userAnswer && <button onClick={() => setShow(true)}>Show Answer</button>}
+                            {show && <div dangerouslySetInnerHTML={{ __html: detail }} />}
+                        </>
+                    )}
                 </div>
-                <button onClick={next}>Next</button>
+                {index < totalNumberOfQuestions && <button disabled={!userAnswer} onClick={next}>Next</button>}
             </div>
         </>
     )
