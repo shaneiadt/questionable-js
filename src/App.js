@@ -19,7 +19,7 @@ export class App extends Component {
   }
 
   render() {
-    if (this.state.loading) return <p>Loading</p>;
+    if (this.state.loading) return <div />;
 
     const question = { ...this.state.questions[this.state.currentQuestion] };
 
