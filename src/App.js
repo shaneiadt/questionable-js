@@ -11,12 +11,27 @@ export class App extends Component {
   componentDidMount() {
     fetch('questions.json')
       .then(data => data.json())
-      .then(({ questions }) => this.setState({ questions, loading: false }))
+      .then(({ questions }) => this.setState({ questions: this.shuffle(questions), loading: false }))
       .catch(e => console.error(e));
   }
 
   setQuestion = (index) => {
     this.setState({ currentQuestion: index });
+  }
+
+  shuffle = (array) => {
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex !== 0) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
   }
 
   render() {
