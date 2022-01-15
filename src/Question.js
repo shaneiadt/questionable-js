@@ -71,7 +71,7 @@ export const Question = ({ title, code, options, detail, index, totalNumberOfQue
                     {index === totalNumberOfQuestions && <p>OVER</p>}
                     {index < totalNumberOfQuestions && (
                         <>
-                            <h3>{title}</h3>
+                            <h2>{title}</h2>
                             <div dangerouslySetInnerHTML={{ __html: code }} />
                             <div dangerouslySetInnerHTML={{ __html: options }} />
                             <br />
