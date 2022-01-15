@@ -14,7 +14,7 @@ export const Question = ({ title, code, options, detail, index, totalNumberOfQue
             const el = e.target.getAttribute('data-selection') ? e.target : e.target.parentElement;
             const selection = el.getAttribute('data-selection');
             const answer = el.innerText;
-            const correctAnswer = detail.match(/Answer: [A|B|C|D]/g)[0].replace('Answer: ', '').toLowerCase();
+            const correctAnswer = detail.match(/Answer: [A|B|C|D|E]/g)[0].replace('Answer: ', '').toLowerCase();
 
             console.log({ el, selection, answer, correctAnswer });
 
