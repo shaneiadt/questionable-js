@@ -48,7 +48,6 @@ export const Question = ({ title, code, options, detail, index, totalNumberOfQue
         }
 
         return () => {
-            console.log('clean up');
             [...document.querySelectorAll('li')].forEach(el => el.removeEventListener('click', listItemListener));
         }
     }, [options, detail, score, userAnswer]);
