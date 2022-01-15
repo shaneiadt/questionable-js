@@ -25,7 +25,7 @@ export class App extends Component {
 
     return (
       <div>
-        <Question index={this.state.currentQuestion} {...question} setQuestion={this.setQuestion} />
+        <Question index={this.state.currentQuestion} totalNumberOfQuestions={this.state.questions.length} {...question} setQuestion={this.setQuestion} />
       </div>
     );
   }

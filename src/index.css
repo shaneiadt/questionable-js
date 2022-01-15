@@ -24,10 +24,10 @@ body {
 }
 
 .question .score {
-    display: inline-block;
-    background: whitesmoke;
-    border-radius: 5px;
-    padding: 10px;
+  display: inline-block;
+  background: whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .card {
@@ -35,4 +35,48 @@ body {
   padding: 20px;
   border-radius: 5px;
   margin: 10px 0;
+}
+
+.card li {
+  cursor: pointer;
+  list-style: none;
+  background: rgba(8, 99, 94, 0.1);
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.card li:hover {
+  background: rgba(8, 99, 94, 1);
+  color: #fff;
+}
+
+.card li .correct {
+  background: rgba(8, 99, 94, 1);
+}
+
+.question .scoreContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question pre {
+  background: rgb(45, 45, 53);
+  padding: 20px;
+  color: whitesmoke;
+}
+
+.question pre .pl-k {
+  color: violet;
+}
+
+.question pre .pl-en {
+  color: lightskyblue;
+}
+
+.question pre .pl-s1 {
+  color: lightyellow;
+}
+
+.question pre .pl-smi {
+  color: lightcoral;
 }
