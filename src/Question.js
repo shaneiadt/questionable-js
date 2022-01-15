@@ -38,7 +38,10 @@ export const Question = ({ title, code, options, detail, index, totalNumberOfQue
         }
 
         for (const li of listItems) {
-            const letter = li.innerText.match(/[A|B|C|D]/g)[0];
+            const match = li.innerText.match(/[A|B|C|D|E]/g);
+            if (!match) return;
+
+            const letter = match[0];
 
             li.setAttribute('data-selection', letter.toLowerCase());
             li.addEventListener('click', listItemListener);
