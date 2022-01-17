@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Footer } from "./Footer";
 import { Question } from './Question';
 
 export class App extends Component {
@@ -23,7 +24,6 @@ export class App extends Component {
     let currentIndex = array.length, randomIndex;
 
     while (currentIndex !== 0) {
-
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
 
@@ -42,6 +42,7 @@ export class App extends Component {
     return (
       <div>
         <Question index={this.state.currentQuestion} totalNumberOfQuestions={this.state.questions.length} {...question} setQuestion={this.setQuestion} />
+        <Footer />
       </div>
     );
   }
