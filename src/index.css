@@ -121,3 +121,9 @@ body {
 .footer img {
   transform: translate(5px, 2px);
 }
+
+.bmc-btn-container {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
